@@ -1,5 +1,10 @@
-const DrepBatchTransfer = artifacts.require("DrepBatchTransfer");
+const ERC20BatchTransfer = artifacts.require("ERC20BatchTransfer");
+const MockERC20 = artifacts.require("MockERC20");
 
 module.exports = function (deployer) {
-  deployer.deploy(DrepBatchTransfer);
+  deployer.deploy(ERC20BatchTransfer);
+
+  if (deployer.network === 'development') {
+    deployer.deploy(MockERC20);
+  }
 };
