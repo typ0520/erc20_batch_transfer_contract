@@ -50,16 +50,20 @@ module.exports = {
      network_id: "*",       // Any network (default: none)
     },
     mainnet: {
-      provider: () => new HDWalletProvider(mnemonic, "https://mainnet.infura.io/v3/ad2753c80e7443049def058f84d61a5a"),
+      provider: () => new HDWalletProvider(mnemonic, "https://mainnet.infura.io/v3/739fe10f685c49eb8e336b4e9ea87f02"),
       production: true,
       network_id: "*",
       networkCheckTimeout: 200000,  
-     },
-     ropsten: {
-      provider: () => new HDWalletProvider(mnemonic, "https://ropsten.infura.io/v3/ad2753c80e7443049def058f84d61a5a"),
-      network_id: "*",       // Ropsten's id
+    },
+    ropsten: {
+      provider: () => new HDWalletProvider(mnemonic, "https://ropsten.infura.io/v3/739fe10f685c49eb8e336b4e9ea87f02"),
       networkCheckTimeout: 200000,  
-     }, 
+      network_id: 3,       // Ropsten's id
+      gas: 5500000,        // Ropsten has a lower block limit than mainnet
+      confirmations: 1,    // # of confs to wait between deployments. (default: 0)
+      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+      skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+    }, 
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port
