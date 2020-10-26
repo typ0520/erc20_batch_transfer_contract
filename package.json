@@ -1,6 +1,21 @@
 {
+  "name": "erc20_batch_transfer_contract",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "test": "truffle test",
+    "migrate_ropsten": "truffle migrate --reset --network ropsten",
+    "migrate_mainnet": "truffle migrate --reset --network mainnet"
+  },
   "dependencies": {
     "openzeppelin-solidity": "^3.2.0",
     "truffle-hdwallet-provider": "^1.0.17"
+  },
+  "devDependencies": {
+    "truffle": "^5.1.50"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
   }
 }
