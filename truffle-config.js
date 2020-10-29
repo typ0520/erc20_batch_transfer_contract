@@ -23,7 +23,7 @@
 //
 const fs = require('fs');
 const HDWalletProvider = require('truffle-hdwallet-provider');
-const mnemonic = fs.readFileSync(".secret_prod").toString().trim();
+const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
   /**
@@ -52,7 +52,7 @@ module.exports = {
       provider: () => new HDWalletProvider(mnemonic, "https://mainnet.infura.io/v3/739fe10f685c49eb8e336b4e9ea87f02"),
       network_id: 1,
       gas: 5500000,        // Ropsten has a lower block limit than mainnet
-      gasPrice: 25 * 1000000000,
+      gasPrice: 30 * 1000000000,
       confirmations: 1,
       networkCheckTimeout: 500000,  
     },
@@ -61,7 +61,7 @@ module.exports = {
       networkCheckTimeout: 200000,  
       network_id: 3,       // Ropsten's id
       gas: 5500000,        // Ropsten has a lower block limit than mainnet
-      gasPrice: 22 * 1000000000,
+      gasPrice: 28 * 1000000000,
       confirmations: 1,    // # of confs to wait between deployments. (default: 0)
       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
