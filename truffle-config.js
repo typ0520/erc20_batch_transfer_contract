@@ -45,11 +45,11 @@ module.exports = {
     //
     development: {
      host: "127.0.0.1",     // Localhost (default: none)
-     port: 7545,            // Standard Ethereum port (default: none)
+     port: 9545,            // Standard Ethereum port (default: none)
      network_id: "*",       // Any network (default: none)
     },
     mainnet: {
-      provider: () => new HDWalletProvider(mnemonic, "https://mainnet.infura.io/v3/739fe10f685c49eb8e336b4e9ea87f02"),
+      provider: () => new HDWalletProvider(mnemonic, "https://mainnet.infura.io/v3/4412e5fa61224a81bc74269170b59101"),
       network_id: 1,
       gas: 5500000,        // Ropsten has a lower block limit than mainnet
       gasPrice: 30 * 1000000000,
@@ -57,7 +57,7 @@ module.exports = {
       networkCheckTimeout: 500000,  
     },
     ropsten: {
-      provider: () => new HDWalletProvider(mnemonic, "https://ropsten.infura.io/v3/739fe10f685c49eb8e336b4e9ea87f02"),
+      provider: () => new HDWalletProvider(mnemonic, "https://ropsten.infura.io/v3/4412e5fa61224a81bc74269170b59101"),
       networkCheckTimeout: 200000,  
       network_id: 3,       // Ropsten's id
       gas: 5500000,        // Ropsten has a lower block limit than mainnet
@@ -67,7 +67,7 @@ module.exports = {
       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     }, 
     rinkeby: {
-      provider: () => new HDWalletProvider(mnemonic, "https://rinkeby.infura.io/v3/739fe10f685c49eb8e336b4e9ea87f02"),
+      provider: () => new HDWalletProvider(mnemonic, "https://rinkeby.infura.io/v3/4412e5fa61224a81bc74269170b59101"),
       networkCheckTimeout: 200000,  
       network_id: 4,       // Ropsten's id
       gas: 5500000,        // Ropsten has a lower block limit than mainnet
@@ -86,6 +86,24 @@ module.exports = {
       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
     }, 
+    bsctest: {
+      provider: () => new HDWalletProvider(mnemonic, "https://data-seed-prebsc-1-s2.binance.org:8545/"),
+      networkCheckTimeout: 200000,  
+      network_id: 97,       // Ropsten's id
+      gas: 5500000,        // Ropsten has a lower block limit than mainnet
+      gasPrice: 28 * 1000000000,
+      confirmations: 1,    // # of confs to wait between deployments. (default: 0)
+      timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+      skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+    }, 
+    bsc: {
+      provider: () => new HDWalletProvider(mnemonic, "https://bsc-dataseed1.binance.org/"),
+      network_id: 56,
+      gas: 5500000,        // Ropsten has a lower block limit than mainnet
+      gasPrice: 30 * 1000000000,
+      confirmations: 1,
+      networkCheckTimeout: 500000,  
+    },
     // Another network with more advanced options...
     // advanced: {
     // port: 8777,             // Custom port
